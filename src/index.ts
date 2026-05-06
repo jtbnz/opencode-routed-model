@@ -6,7 +6,7 @@ export const ShowRoutedModel: Plugin = async ({ client }) => {
   return {
     event: async ({ event }) => {
       if (event.type === "message.updated") {
-        const msg = event.properties.info
+        const msg = event.properties.info as any
         if (
           msg.role === "assistant" &&
           msg.modelID &&
@@ -14,9 +14,12 @@ export const ShowRoutedModel: Plugin = async ({ client }) => {
           !shown.has(msg.id)
         ) {
           shown.add(msg.id)
+          const apiBase = msg.responseHeaders?.["x-litellm-model-api-base"]
+          const deploymentName = msg.responseHeaders?.["llm_provider-x-ms-deployment-name"]
+          const routedModel = deploymentName ?? apiBase ?? `${msg.providerID}/${msg.modelID}`
           client.tui.showToast({
             body: {
-              message: `Model selected: ${msg.providerID}/${msg.modelID}`,
+              message: `Router selected: ${routedModel}`,
               variant: "info",
             },
           })
