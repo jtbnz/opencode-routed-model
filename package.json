@@ -1,5 +1,5 @@
 {
-  "name": "opencode-auto-proxy-model",
+  "name": "opencode-routed-model",
   "version": "1.0.0",
   "description": "OpenCode plugin that displays which model was selected by a LiteLLM auto router (complexity router, semantic router, etc.)",
   "main": "src/index.ts",
@@ -14,7 +14,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/fisherpaykel/opencode-auto-proxy-model.git"
+    "url": "https://github.com/jtbnz/opencode-routed-model.git"
   },
   "peerDependencies": {
     "@opencode-ai/plugin": "*"

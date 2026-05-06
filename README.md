@@ -1,4 +1,4 @@
-# opencode-auto-proxy-model
+# opencode-routed-model
 
 An [OpenCode](https://opencode.ai) plugin that displays which model was selected by a [LiteLLM](https://docs.litellm.ai) auto router when using dynamic model routing (complexity router, semantic router, etc.).
 
@@ -99,7 +99,7 @@ Copy the plugin file directly into your project or global OpenCode plugins direc
 ```bash
 mkdir -p .opencode/plugins
 curl -o .opencode/plugins/show-routed-model.ts \
-  https://raw.githubusercontent.com/fisherpaykel/opencode-auto-proxy-model/main/src/index.ts
+  https://raw.githubusercontent.com/jtbnz/opencode-routed-model/main/src/index.ts
 ```
 
 **Global (all projects):**
@@ -107,7 +107,7 @@ curl -o .opencode/plugins/show-routed-model.ts \
 ```bash
 mkdir -p ~/.config/opencode/plugins
 curl -o ~/.config/opencode/plugins/show-routed-model.ts \
-  https://raw.githubusercontent.com/fisherpaykel/opencode-auto-proxy-model/main/src/index.ts
+  https://raw.githubusercontent.com/jtbnz/opencode-routed-model/main/src/index.ts
 ```
 
 ### Option 2: npm plugin (via opencode config)
@@ -117,7 +117,7 @@ Add the plugin to your `opencode.json`:
 ```json
 {
   "$schema": "https://opencode.ai/config.json",
-  "plugin": ["opencode-auto-proxy-model"]
+  "plugin": ["opencode-routed-model"]
 }
 ```
 
