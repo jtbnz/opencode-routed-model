@@ -16,7 +16,7 @@ export const ShowRoutedModel: Plugin = async ({ client }) => {
           shown.add(msg.id)
           client.tui.showToast({
             body: {
-              message: `Router selected: ${msg.providerID}/${msg.modelID}`,
+              message: `Model selected: ${msg.providerID}/${msg.modelID}`,
               variant: "info",
             },
           })
