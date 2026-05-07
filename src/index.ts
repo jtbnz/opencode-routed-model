@@ -16,10 +16,13 @@ export const ShowRoutedModel: Plugin = async ({ client }) => {
           shown.add(msg.id)
           const apiBase = msg.responseHeaders?.["x-litellm-model-api-base"]
           const deploymentName = msg.responseHeaders?.["llm_provider-x-ms-deployment-name"]
-          const routedModel = deploymentName ?? apiBase ?? `${msg.providerID}/${msg.modelID}`
+          const routedModelRaw = deploymentName ?? apiBase ?? `${msg.providerID}/${msg.modelID}`
+          // If the value is a full URL, extract just the model name from the path
+          const urlModelMatch = routedModelRaw.match(/\/models\/([^/:]+)/)
+          const routedModel = urlModelMatch ? urlModelMatch[1] : routedModelRaw
           client.tui.showToast({
             body: {
-              message: `Router selected: ${routedModel}`,
+              message: `Model used: ${routedModel}`,
               variant: "info",
             },
           })
