@@ -93,11 +93,15 @@ Connect OpenCode to your LiteLLM proxy as a custom provider in your `opencode.js
 
 The package is published on npm: [opencode-routed-model](https://www.npmjs.com/package/opencode-routed-model)
 
+You do **not** need to run `npm install` manually. OpenCode automatically installs npm plugins using Bun at startup, cached globally in `~/.cache/opencode/node_modules/`.
+
 There are two ways to install this plugin.
 
 ### Option 1: npm plugin (recommended)
 
-Add the plugin to your `opencode.json`:
+Add the plugin to your config file. To apply it to **all projects**, add it to your global config:
+
+**Global (all projects) — `~/.config/opencode/opencode.json`:**
 
 ```json
 {
@@ -106,11 +110,11 @@ Add the plugin to your `opencode.json`:
 }
 ```
 
-OpenCode will automatically install the package from npm at startup.
+To apply it to a **single project only**, add it to the `opencode.json` in your project folder instead.
 
 ### Option 2: Local file
 
-Copy the plugin file directly into your project or global OpenCode plugins directory.
+Copy the plugin file directly into your OpenCode plugins directory.
 
 **Per project:**
 
