@@ -1,6 +1,6 @@
 {
   "name": "opencode-routed-model",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "OpenCode plugin that displays which model was selected by a LiteLLM auto router (complexity router, semantic router, etc.)",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -22,15 +22,12 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/jtbnz/opencode-routed-model.git"
+    "url": "git+https://github.com/jtbnz/opencode-routed-model.git"
   },
   "peerDependencies": {
     "@opencode-ai/plugin": "*"
   },
   "devDependencies": {
     "typescript": "^6.0.3"
-  },
-  "dependencies": {
-    "opencode-routed-model": "^1.0.2"
   }
 }
