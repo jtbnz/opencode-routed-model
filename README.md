@@ -132,16 +132,16 @@ curl -o ~/.config/opencode/plugins/show-routed-model.ts \
 
 Once installed, restart OpenCode. The plugin activates automatically -- no configuration needed.
 
-After each assistant response, you will see a toast notification in the bottom of the TUI showing which model the router selected:
+After each assistant response, you will see a toast notification in the bottom of the TUI showing which model was used:
 
 ```
-Router selected: gpt-4o-mini
+Model used: gpt-4o-mini
 ```
 
 or
 
 ```
-Router selected: claude-sonnet-4-20250514
+Model used: claude-sonnet-4-20250514
 ```
 
 This tells you exactly which model the LiteLLM complexity router chose for that particular request.
@@ -175,7 +175,7 @@ All models referenced in the `tiers` config must:
 
 ### Toast shows the router alias instead of the actual model
 
-If you see the alias (e.g. `smart-router`) instead of the actual model (e.g. `gpt-4o-mini`), the AI SDK may not be passing through the response model field. In this case, the actual model can be found:
+If you see the alias (e.g. `smart-router`) instead of the actual model name (e.g. `gpt-4o-mini`), the AI SDK may not be passing through the response model field. In this case, the actual model can be found:
 
 - In the LiteLLM dashboard under **Logs**
 - In the `x-litellm-model-id` response header
