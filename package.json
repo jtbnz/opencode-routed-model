@@ -1,6 +1,6 @@
 {
   "name": "opencode-routed-model",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "OpenCode plugin that displays which model was selected by a LiteLLM auto router (complexity router, semantic router, etc.)",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
