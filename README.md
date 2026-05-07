@@ -1,5 +1,8 @@
 # opencode-routed-model
 
+> **⚠️ This plugin is currently non-functional.**
+> It depends on an OpenCode API that is not yet available. Track progress at [opencode issue #26091](https://github.com/anomalyco/opencode/issues/26091). Once that issue is resolved this plugin will work as described below.
+
 An [OpenCode](https://opencode.ai) plugin that displays which model was selected by a [LiteLLM](https://docs.litellm.ai) auto router when using dynamic model routing (complexity router, semantic router, etc.).
 
 ## The Problem
