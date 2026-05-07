@@ -88,9 +88,24 @@ Connect OpenCode to your LiteLLM proxy as a custom provider in your `opencode.js
 
 ## Installation
 
+The package is published on npm: [opencode-routed-model](https://www.npmjs.com/package/opencode-routed-model)
+
 There are two ways to install this plugin.
 
-### Option 1: Local file (recommended for quick setup)
+### Option 1: npm plugin (recommended)
+
+Add the plugin to your `opencode.json`:
+
+```json
+{
+  "$schema": "https://opencode.ai/config.json",
+  "plugin": ["opencode-routed-model"]
+}
+```
+
+OpenCode will automatically install the package from npm at startup.
+
+### Option 2: Local file
 
 Copy the plugin file directly into your project or global OpenCode plugins directory.
 
@@ -109,21 +124,6 @@ mkdir -p ~/.config/opencode/plugins
 curl -o ~/.config/opencode/plugins/show-routed-model.ts \
   https://raw.githubusercontent.com/jtbnz/opencode-routed-model/main/src/index.ts
 ```
-
-### Option 2: npm plugin (via opencode config)
-
-Add the plugin to your `opencode.json`:
-
-```json
-{
-  "$schema": "https://opencode.ai/config.json",
-  "plugin": ["opencode-routed-model"]
-}
-```
-
-OpenCode will automatically install the package from npm at startup.
-
-> **Note:** The npm package must be published first. If you cloned this repo, you can reference the local path instead.
 
 ## Usage
 
@@ -199,6 +199,24 @@ Because the complexity router dynamically selects different models with differen
 - Use the **LiteLLM dashboard** spend tracking, which knows the actual model per request.
 - The `x-litellm-response-cost` response header contains the cost for each request.
 - Query the `/spend/logs` API for detailed breakdowns by team, key, or model.
+
+## Publishing to npm
+
+This package is published at [npmjs.com/package/opencode-routed-model](https://www.npmjs.com/package/opencode-routed-model).
+
+To publish an update:
+
+1. Make your changes in `src/index.ts`
+2. Bump the version in `package.json` (follow [semver](https://semver.org): patch for bug fixes, minor for new features)
+3. Run:
+
+```bash
+npm publish
+```
+
+The `prepublishOnly` script automatically compiles TypeScript to `dist/` before publishing. You do not need to run the build step manually.
+
+You must be logged in to npm (`npm login`) and have publish access to the package.
 
 ## License
 
